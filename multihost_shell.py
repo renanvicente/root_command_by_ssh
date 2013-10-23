@@ -65,10 +65,10 @@ def doSSH(hostname, username, password, command, root=False, port_number=13000):
             print(red + "\n\n %s ROOT password failed." % hostname + end_color)
             exit(1)
             s.logout()
-    except ExceptionPxssh, e:
+    except ExceptionPxssh as e:
         print(red + "\n\n %s Fail first Login." % hostname + end_color)
         print(yellow + str(e) + "\n\n" + end_color)
-    except  ExceptionPexpect, e:
+    except  ExceptionPexpect as e:
         print(red + "\n\n %s Problem with ssh port or incorret password." % hostname + end_color)
         print(str(e) + "\n\n")
     except KeyboardInterrupt:
