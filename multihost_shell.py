@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- encoding: utf8 -*-
-# Author: Renan Vicente Gomes da Silva <renan.silva@gmail.com>
+# Author: Renan Vicente Gomes da Silva <renanvice@gmail.com>
 
 from sys import argv, exit
 from pxssh import pxssh , ExceptionPxssh
