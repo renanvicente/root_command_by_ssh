@@ -29,6 +29,6 @@ h2. Using
 
 h2. Author
 
-Renan Vicente Gomes da Silva <renanvice [at] gmail [dot] com>
+Renan Vicente Gomes da Silva <renanvice@gmail.com>
 http://linuxextreme.org
 
