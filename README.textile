@@ -3,8 +3,30 @@ h1. root_command_by_ssh
 This script is to execute remote command,
 by simple user or root, you can take a list of ips and use script to execute commands
 
-h2. Using
+h2. Dependencies
+<pre>
+    This project need to install the lib fabric and paramiko to python.
+    You can download the latest version fabric in fabfile.org or pypi.
+    fabifile.org = http://docs.fabfile.org/en/1.8/
+    pypi = https://pypi.python.org/pypi/Fabric
+    
+    How to install the lib fabric.
+    You can use the pypi or download to source.
+    <code>
+        pip install fabric
+        pip install paramiko
+    </code>
 
+    OR
+
+    if you want to use the source code.
+    extract the content and go to inside that directory.
+    <code>
+        python setup.py install
+    </code>
+</pre>
+
+h3. How To Use
 <pre>
 <code>
     1. Clone
@@ -12,12 +34,23 @@ h2. Using
     cd root_command_by_ssh
 
     2. Exemple to run
-    chmod u+x multihost_shell.py
-    2.1 Execute command as root
-    ./multihost_shell.py --root 192.168.1.104
-    2.2 Using file text with list ips
-    ./multihost_shell.py --root --file list_ips.txt
-    2.3 You can use --help to see more options
+    2.1 Create a file with your hosts
+        cat << EOF > hosts
+            192.168.10.10
+            192.168.10.30
+            192.168.10.40
+            192.168.10.15
+            192.168.10.60
+        EOF
+    2.1 Execute command as root with su and with file
+        fab tofile:hosts run_as_root_with_su
+    2.2 Execute command as root without file
+        fab run_as_root_with_su --hosts=192.168.10.10,192.168.10.30,192.168.10.50
+    2.3 You can use as root with sudo
+        fab tofile:hosts run_as_root_with_sudo
+    2.4 Especify port
+        fab tofile:hosts run_as_root_with_sudo --port 13000
+    2.5 Execute wuth 
     ./multihost_shell.py --help
 
     3. Execution
