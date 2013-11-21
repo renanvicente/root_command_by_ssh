@@ -28,13 +28,14 @@ h2. Dependencies
 
 h3. How To Use
 <pre>
-<code>
     1. Clone
+<code>
     git clone git@github.com:renanvice/root_command_by_ssh.git
     cd root_command_by_ssh
-
+</code>
     2. Exemple to run
     2.1 Create a file with your hosts
+<code>
         cat << EOF > hosts
             192.168.10.10
             192.168.10.30
@@ -42,22 +43,32 @@ h3. How To Use
             192.168.10.15
             192.168.10.60
         EOF
+</code>
     2.1 Execute command as root with su and with file
+<code>
         fab tofile:hosts run_as_root_with_su
+</code>
     2.2 Execute command as root without file
+<code>
         fab run_as_root_with_su --hosts=192.168.10.10,192.168.10.30,192.168.10.50
+</code>
     2.3 You can use as root with sudo
+<code>
         fab tofile:hosts run_as_root_with_sudo
+</code>
     2.4 Especify port
+<code>
         fab tofile:hosts run_as_root_with_sudo --port 13000
+</code>
     2.5 Execute wuth 
+<code>
     ./multihost_shell.py --help
+</code>
 
     3. Execution
     You will be asked to inform the simple user , simple user password and root password.
     The script will sign in with simple user and than use command su to execute command as root
 
-</code>
 </pre>
 
 h2. Author
