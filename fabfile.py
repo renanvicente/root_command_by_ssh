@@ -1,15 +1,17 @@
 from fabric.api import *
 from getpass import getpass
 
-
+cont = 0
+info = {}
 def get_info(root=False):
   try:
-    info = {}
-    info['username'] = raw_input('username: ')
-    info['password'] = getpass('password: ')
-    if root:
-      info['pass_root'] = getpass('root password: ')
-    info['command'] = raw_input('Insert command to execute: ')
+    global info
+    if not info:
+      info['username'] = raw_input('username: ')
+      info['password'] = getpass('password: ')
+      if root:
+        info['pass_root'] = getpass('root password: ')
+      info['command'] = raw_input('Insert command to execute: ')
   except KeyboardInterrupt:
       exit(1)
   return info
