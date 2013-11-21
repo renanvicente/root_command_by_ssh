@@ -60,7 +60,8 @@ h3. How To Use
 <code>
         fab tofile:hosts run_as_root_with_sudo --port 13000
 </code>
-    2.5 Execute wuth 
+    Another project without fabric is multihost_shell.
+    If you want to see and continue project can see the help options.
 <code>
     ./multihost_shell.py --help
 </code>
