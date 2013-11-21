@@ -14,6 +14,8 @@ h2. Dependencies
     You can use the pypi or download to source.
     <code>
         pip install fabric
+    </code>
+    <code>
         pip install paramiko
     </code>
 
